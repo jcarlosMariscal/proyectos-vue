@@ -1,20 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div></div>
+  <InputTag></InputTag>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import InputTag from "@/components/InputTag.vue";
 </script>
 
 <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
