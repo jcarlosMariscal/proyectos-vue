@@ -4,15 +4,17 @@
   <div class="bg-dark">
     <div class="container">
       <InputTag @onTagsChange="handleOnTagsChange"></InputTag>
+      <DragDrop></DragDrop>
     </div>
   </div>
 </template>
 
 <script>
 import InputTag from "@/components/InputTag.vue";
+import DragDrop from "@/components/DragDrop.vue";
 export default {
   // name: "a pp",
-  components: { InputTag },
+  components: { InputTag, DragDrop },
   methods: {
     handleOnTagsChange(tags) {
       console.log(tags);
