@@ -1,8 +1,11 @@
 <template>
-  <div></div>
   <!-- Para props -->
   <!-- <InputTag :onTagsChange="handleOnTagsChange"></InputTag> -->
-  <InputTag @onTagsChange="handleOnTagsChange"></InputTag>
+  <div class="bg-dark">
+    <div class="container">
+      <InputTag @onTagsChange="handleOnTagsChange"></InputTag>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -30,6 +33,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+}
+.bg-dark {
+  min-height: 100vh;
+}
+.container {
+  padding: 3rem 0;
 }
 </style>

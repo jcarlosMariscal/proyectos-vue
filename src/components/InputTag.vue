@@ -1,14 +1,25 @@
 <template>
-  <div class="inputTag">
+  <h4 class="text-info-emphasis">Tag Input</h4>
+  <div class="inputTag border">
     <div class="tags">
-      <div class="tag" v-for="(tag, index) in tags" :key="index">
-        {{ tag }} <button @click="deleteTag(tag)">X</button>
+      <div
+        class="tag text-white border border-primary-subtle"
+        v-for="(tag, index) in tags"
+        :key="index"
+      >
+        {{ tag }} <button @click="deleteTag(tag)" class="text-white">X</button>
       </div>
     </div>
     <form @submit.prevent="handleSubmit">
-      <input class="input" v-model="currentValue" @keydown="hadleKeyDown" />
+      <input
+        class="input bg-success-subtle"
+        autofocus
+        v-model="currentValue"
+        @keydown="hadleKeyDown"
+      />
     </form>
   </div>
+  <hr />
 </template>
 
 <script>
@@ -53,7 +64,7 @@ export default {
 <style scoped>
 .inputTag {
   display: inline-flex;
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   border-radius: 3px;
   height: 43px;
 }
@@ -83,8 +94,11 @@ export default {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.1s ease-in;
 }
 .inputTag button:hover {
-  background-color: #eee;
+  /* background-color: #eee; */
+  color: rgb(248, 227, 227) !important;
+  transition: all 0.1s ease-in;
 }
 </style>
