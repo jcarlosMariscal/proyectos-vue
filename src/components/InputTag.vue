@@ -6,7 +6,7 @@
       </div>
     </div>
     <form @submit.prevent="handleSubmit">
-      <input class="text" v-model="currentValue" />
+      <input class="input" v-model="currentValue" @keydown="hadleKeyDown" />
     </form>
   </div>
 </template>
@@ -14,6 +14,8 @@
 <script>
 export default {
   name: "input-tag",
+  // props: ["onTagsChange"],
+  emits: ["onTagsChange"],
   data() {
     return {
       currentValue: "",
@@ -21,20 +23,68 @@ export default {
     };
   },
   methods: {
+    hadleKeyDown(e) {
+      if (e.key === "Backspace" && this.currentValue === "") {
+        this.tags.pop();
+        // this.onTagsChange(this.tags);
+        this.$emit("onTagsChange", this.tags);
+      }
+    },
     handleSubmit() {
       if (this.currentValue !== "") {
         const exits = this.tags.some((item) => item === this.currentValue);
         if (!exits) {
           this.tags.push(this.currentValue);
           this.currentValue = "";
+          // this.onTagsChange(this.tags);
+          this.$emit("onTagsChange", this.tags);
         }
       }
     },
     deleteTag(tag) {
       this.tags = this.tags.filter((item) => item !== tag);
+      // this.onTagsChange(this.tags);
+      this.$emit("onTagsChange", this.tags);
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.inputTag {
+  display: inline-flex;
+  border: solid 1px #000;
+  border-radius: 3px;
+  height: 43px;
+}
+.tags {
+  display: flex;
+  gap: 3px;
+  padding: 5px;
+}
+.tags .tag {
+  display: flex;
+  padding: 5px;
+  border: solid 1px #ccc;
+  gap: 5px;
+  align-items: center;
+  border-radius: 3px;
+}
+.inputTag form {
+  display: inline-flex;
+}
+.inputTag .input {
+  border: none;
+  outline: none;
+  padding: 0 5px;
+}
+.inputTag button {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.inputTag button:hover {
+  background-color: #eee;
+}
+</style>

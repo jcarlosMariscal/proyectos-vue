@@ -1,10 +1,21 @@
 <template>
   <div></div>
-  <InputTag></InputTag>
+  <!-- Para props -->
+  <!-- <InputTag :onTagsChange="handleOnTagsChange"></InputTag> -->
+  <InputTag @onTagsChange="handleOnTagsChange"></InputTag>
 </template>
 
-<script setup>
+<script>
 import InputTag from "@/components/InputTag.vue";
+export default {
+  // name: "a pp",
+  components: { InputTag },
+  methods: {
+    handleOnTagsChange(tags) {
+      console.log(tags);
+    },
+  },
+};
 </script>
 
 <style>
