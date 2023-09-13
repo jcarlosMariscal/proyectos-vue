@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { getGrandTotal, store } from "@/store/store";
+import { getGrandTotal, store } from "@/stores/store";
 import SplitBillPeopleLabel from "./SplitBillPeopleLabel.vue";
 import SplitBillPeoplePerson from "./SplitBillPeoplePerson.vue";
 </script>

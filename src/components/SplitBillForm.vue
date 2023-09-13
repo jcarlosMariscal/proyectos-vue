@@ -22,7 +22,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { store, calculate } from "@/store/store";
+import { store, calculate } from "@/stores/store";
 
 const total = ref(0);
 const tip = ref(0);
