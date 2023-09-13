@@ -3,8 +3,9 @@
   <!-- <InputTag :onTagsChange="handleOnTagsChange"></InputTag> -->
   <div class="bg-dark">
     <div class="container">
-      <InputTag @onTagsChange="handleOnTagsChange"></InputTag>
-      <DragDrop></DragDrop>
+      <InputTag @onTagsChange="handleOnTagsChange" />
+      <DragDrop />
+      <SplitBillView />
     </div>
   </div>
 </template>
@@ -12,9 +13,10 @@
 <script>
 import InputTag from "@/components/InputTag.vue";
 import DragDrop from "@/components/DragDrop.vue";
+import SplitBillView from "./components/SplitBillView.vue";
 export default {
   // name: "a pp",
-  components: { InputTag, DragDrop },
+  components: { InputTag, DragDrop, SplitBillView },
   methods: {
     handleOnTagsChange(tags) {
       console.log(tags);
