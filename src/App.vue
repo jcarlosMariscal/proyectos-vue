@@ -7,6 +7,7 @@
       <DragDrop />
       <SplitBillView />
       <RSSReader />
+      <MenuView />
     </div>
   </div>
 </template>
@@ -16,9 +17,10 @@ import InputTag from "@/components/InputTag.vue";
 import DragDrop from "@/components/DragDrop.vue";
 import SplitBillView from "./components/SplitBillView.vue";
 import RSSReader from "./components/RSSReader.vue";
+import MenuView from "./components/MenuView.vue";
 export default {
   // name: "a pp",
-  components: { InputTag, DragDrop, SplitBillView, RSSReader },
+  components: { InputTag, DragDrop, SplitBillView, RSSReader, MenuView },
   methods: {
     handleOnTagsChange(tags) {
       console.log(tags);
