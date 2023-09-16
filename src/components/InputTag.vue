@@ -2,12 +2,8 @@
   <h4 class="text-info-emphasis">Tag Input</h4>
   <div class="inputTag border">
     <div class="tags">
-      <div
-        class="tag text-white border border-primary-subtle"
-        v-for="(tag, index) in tags"
-        :key="index"
-      >
-        {{ tag }} <button @click="deleteTag(tag)" class="text-white">X</button>
+      <div class="tag bg-info" v-for="(tag, index) in tags" :key="index">
+        {{ tag }} <button @click="deleteTag(tag)" class="text-dark">X</button>
       </div>
     </div>
     <form @submit.prevent="handleSubmit">
@@ -76,7 +72,7 @@ export default {
 .tags .tag {
   display: flex;
   padding: 5px;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   gap: 5px;
   align-items: center;
   border-radius: 3px;
@@ -98,7 +94,7 @@ export default {
 }
 .inputTag button:hover {
   /* background-color: #eee; */
-  color: rgb(248, 227, 227) !important;
+  color: rgb(53, 52, 52) !important;
   transition: all 0.1s ease-in;
 }
 </style>

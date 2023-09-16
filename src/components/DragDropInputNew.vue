@@ -1,6 +1,11 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input type="text" v-model="text" />
+    <input
+      type="text"
+      class="form-control"
+      v-model="text"
+      placeholder="Create new item"
+    />
   </form>
 </template>
 
