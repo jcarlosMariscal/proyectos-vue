@@ -34,7 +34,7 @@ import SplitBillPeoplePerson from "./SplitBillPeoplePerson.vue";
 <style scoped>
 .no-items {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,18 +47,20 @@ import SplitBillPeoplePerson from "./SplitBillPeoplePerson.vue";
   flex-direction: column;
 }
 .people-container {
-  width: 800px;
+  width: 750px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* align-items: center;
+  justify-content: center; */
   grid-template-rows: auto;
   gap: 10px;
 }
 .header {
   color: white;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   padding: 20px 0;
-  font-size: 28px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
   gap: 10px;

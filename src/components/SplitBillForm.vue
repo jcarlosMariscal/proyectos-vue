@@ -1,20 +1,20 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form @submit.prevent="handleSubmit" class="bg-info form">
     <div class="form-container">
       <div>
         <label for="total">Total</label>
-        <input type="number" v-model="total" required />
+        <input type="number" class="form-control" v-model="total" required />
       </div>
       <div>
         <label for="tip">Tip %</label>
-        <input type="number" v-model="tip" required />
+        <input type="number" class="form-control" v-model="tip" required />
       </div>
       <div>
         <label for="people">People</label>
-        <input type="number" v-model="people" required />
+        <input type="number" class="form-control" v-model="people" required />
       </div>
       <div>
-        <input type="submit" value="Calculate" />
+        <input type="submit" class="btn btn-primary" value="Calculate" />
       </div>
     </div>
   </form>
@@ -38,9 +38,9 @@ const handleSubmit = () => {
 
 <style scoped>
 form {
-  width: 400px;
-  background-color: rgb(23, 129, 78);
-  height: 100vh;
+  width: 300px;
+  /* background-color: rgb(23, 129, 78); */
+  /* height: 100vh; */
   display: flex;
   align-items: center;
   color: white;

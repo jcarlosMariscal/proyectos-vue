@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar text-bg-primary">
     <div v-for="(source, index) in store.sources" :key="index">
       <a href="" @click.prevent="handleClick(source)">{{ source.name }}</a>
     </div>
@@ -20,15 +20,15 @@ const handleClick = (source) => {
 .sidebar {
   grid-column-start: 1;
   grid-column-end: 2;
-  background-color: #1e4b68;
+  /* background-color: #1e4b68; */
 }
 .sidebar a {
-  color: #4594cd;
+  color: white;
   display: block;
   padding: 5px;
   text-decoration: none;
 }
 .sidebar a:hover {
-  background-color: white;
+  background-color: blue;
 }
 </style>

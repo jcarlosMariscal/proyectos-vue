@@ -2,7 +2,8 @@
   <div :class="['menu', collapsed ? 'collapsed' : 'expanded']">
     <div class="header">
       <button class="menu-button" @click="collapsed = !collapsed">
-        <font-awesome-icon icon="fa-solid fa-bars" size="2x" />
+        <font-awesome-icon icon="fa-solid fa-bars" v-if="collapsed" size="2x" />
+        <font-awesome-icon icon="fa-solid fa-xmark" v-else size="2x" />
       </button>
     </div>
     <div class="profile">
@@ -31,7 +32,7 @@ import { ref } from "vue";
 import menuItems from "@/helpers/menuItems";
 import MenuItem from "./MenuItem.vue";
 
-const collapsed = ref(false);
+const collapsed = ref(true);
 </script>
 
 <style scoped>
@@ -44,6 +45,7 @@ const collapsed = ref(false);
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 600;
 }
 .header {
   display: flex;

@@ -1,4 +1,5 @@
 <template>
+  <h4 class="text-info-emphasis">RSS Reader</h4>
   <div class="main-container">
     <RSSReaderHeader />
     <RSSReaderSidebar />
@@ -20,6 +21,6 @@ import RSSReaderSidebar from "./RSSReaderSidebar.vue";
   grid-template-areas:
     "header header"
     "sidebar main";
-  height: 100vh;
+  /* height: 100vh; */
 }
 </style>

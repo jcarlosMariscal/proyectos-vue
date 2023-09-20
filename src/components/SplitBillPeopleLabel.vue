@@ -2,7 +2,7 @@
   <div>
     <span class="title">{{ props.title }}</span>
     <!-- API QUE PERMITE ESTANDARIZA LA FORMA EL COMO SE VA A MOSTRAR UN VALOR. -->
-    <span class="value">{{
+    <span class="value text-success">{{
       new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -19,8 +19,5 @@ const props = defineProps(["title", "value"]);
 <style scoped>
 .title {
   font-weight: bolder;
-}
-.value {
-  color: yellowgreen;
 }
 </style>

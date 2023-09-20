@@ -18,19 +18,23 @@
         v-for="board in boards"
         :key="board.id"
       >
-        <div class="board-color" @click.prevent="activeSelect(board)">
+        <div
+          class="board-color"
+          :style="{
+            background: getBackground(board).bgIcon,
+            color: getBackground(board).bgIconText,
+          }"
+          @click.prevent="activeSelect(board)"
+        >
           <font-awesome-icon icon="fa-solid fa-palette" />
         </div>
-        <div
-          v-if="board.select"
-          class="form-color"
-          :style="{ background: getBackground(board).third }"
-        >
+        <div v-if="board.select" class="form-color">
           <ul class="form-ul">
             <li class="form-li" v-for="(bg, index) in bgColors" :key="index">
               <div
                 class="form-li-color"
                 :style="{ background: bg.secondary }"
+                @click="selectColor(board, bg)"
               ></div>
             </li>
           </ul>
@@ -67,58 +71,78 @@ let bgColors = [
     name: "bg-default",
     primary: "#343a40",
     secondary: "#495057",
-    third: "rgba(33, 37, 41, 0.3)",
+    bgIcon: "#9ec5fe",
+    bgIconText: "#6ea8fe",
   },
   {
     name: "bg-one",
     primary: "#055160",
     secondary: "#087990",
-    third: "rgba(3, 40, 48, 0.3)",
+    bgIcon: "#efadce",
+    bgIconText: "#e685b5",
   },
   {
     name: "bg-two",
     primary: "#0d503c",
     secondary: "#13795b",
+    bgIcon: "#9ec5fe",
+    bgIconText: "#6ea8fe",
   },
   {
     name: "bg-three",
     primary: "#0a3622",
     secondary: "#0f5132",
+    bgIcon: "#ffe69c",
+    bgIconText: "#ffda6a",
   },
   {
     name: "bg-four",
     primary: "#664d03",
     secondary: "#997404",
+    bgIcon: "#efadce",
+    bgIconText: "#e685b5",
   },
   {
     name: "bg-five",
     primary: "#653208",
     secondary: "#984c0c",
+    bgIcon: "#efadce",
+    bgIconText: "#e685b5",
   },
   {
     name: "bg-six",
     primary: "#58151c",
     secondary: "#842029",
+    bgIcon: "#a6e9d5",
+    bgIconText: "#79dfc1",
   },
   {
     name: "bg-seven",
     primary: "#561435",
     secondary: "#801f4f",
+    bgIcon: "#9ec5fe",
+    bgIconText: "#6ea8fe",
   },
   {
     name: "bg-eight",
     primary: "#2c1a4d",
     secondary: "#432874",
+    bgIcon: "#ffe69c",
+    bgIconText: "#ffda6a",
   },
   {
     name: "bg-nine",
     primary: "#290661",
     secondary: "#3d0a91",
+    bgIcon: "#ffe69c",
+    bgIconText: "#ffda6a",
   },
   {
     name: "bg-ten",
     primary: "#052c65",
     secondary: "#084298",
+    bgIcon: "#ffe69c",
+    bgIconText: "#ffda6a",
   },
 ];
 console.log(bgColors);
@@ -131,27 +155,7 @@ let boards = reactive([
     items: [
       {
         id: crypto.randomUUID(),
-        title: "Featru de archivos",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "Resolver Bug",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "Resolver Bug",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "Resolver Bug",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "Resolver Bug",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "Resolver Bug",
+        title: "Feature de archivos",
       },
       {
         id: crypto.randomUUID(),
@@ -162,7 +166,7 @@ let boards = reactive([
   {
     id: crypto.randomUUID(),
     name: "Tablero 2",
-    background: "bg-one",
+    background: "bg-four",
     select: false,
     items: [
       {
@@ -173,61 +177,21 @@ let boards = reactive([
         id: crypto.randomUUID(),
         title: "code review",
       },
+    ],
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "Tablero 3",
+    background: "bg-eight",
+    select: false,
+    items: [
       {
         id: crypto.randomUUID(),
-        title: "code review",
+        title: "Resolución de problemas",
       },
       {
         id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
-      },
-      {
-        id: crypto.randomUUID(),
-        title: "code review",
+        title: "Análisis de datos",
       },
     ],
   },
@@ -281,7 +245,8 @@ const getBackground = (board) => {
     return {
       primary: bg.primary,
       secondary: bg.secondary,
-      third: bg.third,
+      bgIcon: bg.bgIcon,
+      bgIconText: bg.bgIconText,
       // Otros estilos que desees aplicar
     };
   }
@@ -291,6 +256,10 @@ const getBackground = (board) => {
 };
 const activeSelect = (board) => {
   board.select = !board.select;
+};
+const selectColor = (board, bg) => {
+  board.background = bg.name;
+  board.select = false;
 };
 </script>
 
@@ -325,13 +294,11 @@ nav ul li a {
   position: absolute;
   right: 3px;
   top: 3px;
-  background: #ffe69c;
-  color: #ffc107;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 999;
+  z-index: 500;
 }
 .form-color {
   /* width: 96%; */
@@ -341,6 +308,7 @@ nav ul li a {
   top: 35px;
   left: 5px;
   right: 5px;
+  background: rgba(255, 255, 255, 0.3);
 }
 .form-ul {
   padding: 0.5rem;
@@ -355,6 +323,7 @@ nav ul li a {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
+  cursor: pointer;
   /* background-color: aqua; */
 }
 .items {

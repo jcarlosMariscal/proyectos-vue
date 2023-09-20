@@ -1,8 +1,11 @@
 <template>
+  <h4 class="text-info-emphasis">Split Bill</h4>
+  <!-- <nav class="badge bg-info"> -->
   <div class="content">
     <SplitBillForm />
     <SplitBillPeople />
   </div>
+  <hr />
 </template>
 
 <script setup>

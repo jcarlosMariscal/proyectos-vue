@@ -1,7 +1,19 @@
 <template>
-  <div :class="['person', props.paid ? 'person-paid' : 'person-no-paid']">
-    <div class="person-number">Person {{ props.numberOfPerson }}</div>
-    <div class="person-to-pay">
+  <div
+    :class="[
+      'person',
+      props.paid
+        ? 'border border-success border-3'
+        : 'border border-danger border-3',
+    ]"
+  >
+    <div class="person-number text-bg-primary">
+      Person {{ props.numberOfPerson }}
+    </div>
+    <div
+      class="person-to-pay"
+      :class="[props.paid ? 'text-success' : 'text-danger']"
+    >
       {{
         new Intl.NumberFormat("en-US", {
           style: "currency",
@@ -9,7 +21,7 @@
         }).format(props.totalPerPerson)
       }}
     </div>
-    <div class="paid">
+    <div class="paid text-bg-primary">
       <input type="checkbox" name="" id="" @change="handleChange" /> Paid
     </div>
   </div>
@@ -42,10 +54,10 @@ const handleChange = (e) => {
   border: solid 3px yellowgreen;
 }
 .person-no-paid {
-  border: solid 3px #ccc;
+  border: solid 3px transparent;
 }
 .person-number {
-  background-color: black;
+  /* background-color: black; */
   padding: 10px;
   color: white;
   text-align: center;

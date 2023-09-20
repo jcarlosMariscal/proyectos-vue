@@ -18,6 +18,7 @@ import {
   faScrewdriverWrench,
   faHomeUser,
   faPalette,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -27,6 +28,7 @@ library.add(faFire);
 library.add(faScrewdriverWrench);
 library.add(faHomeUser);
 library.add(faPalette);
+library.add(faXmark);
 
 const pinia = createPinia();
 // createApp(App).mount("#app");

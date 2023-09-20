@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
-    <form @submit.prevent="handleSubmit">
-      <input type="url" required v-model="url" />
-      <button type="submit">Add source</button>
+  <div class="header bg-info">
+    <form @submit.prevent="handleSubmit" class="form">
+      <input type="url" class="input form-control" required v-model="url" />
+      <button type="submit" class="btn btn-primary">Add source</button>
     </form>
   </div>
 </template>
@@ -38,13 +38,7 @@ form {
 }
 .input {
   border: none;
-  width: 400px;
+  width: 350px;
   padding: 10px;
-}
-button {
-  border: none;
-  background-color: #1283a9;
-  color: white;
-  padding: 5px 10px;
 }
 </style>
