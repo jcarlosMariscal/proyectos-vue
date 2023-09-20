@@ -19,8 +19,14 @@ const store = useFeedStore();
   background-color: #213442;
   color: white;
   grid-column-start: 2;
-  grid-column-end: 30;
+  grid-column-end: 3;
   padding: 20px 80px 20px 40px;
+}
+@media screen and (max-width: 650px) {
+  .main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
 summary {
   padding: 5px;

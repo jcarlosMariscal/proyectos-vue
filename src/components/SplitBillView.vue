@@ -17,4 +17,9 @@ import SplitBillPeople from "./SplitBillPeople.vue";
 .content {
   display: flex;
 }
+@media screen and (max-width: 650px) {
+  .content {
+    flex-direction: column;
+  }
+}
 </style>

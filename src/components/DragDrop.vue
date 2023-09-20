@@ -283,6 +283,8 @@ nav ul li a {
 .boards {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .board {
   background: #efefef;
@@ -364,5 +366,16 @@ nav ul li a {
 }
 .bg-one .items::-webkit-scrollbar-thumb {
   background-color: #031633;
+}
+
+@media screen and (max-width: 1000px) {
+  .board {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .board {
+    width: 400px;
+  }
 }
 </style>

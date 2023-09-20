@@ -23,12 +23,12 @@ const handleSubmit = () => {
 
 <style scoped>
 .header {
-  background: black;
   grid-area: header;
   justify-self: stretch;
   display: flex;
   justify-content: center;
   padding: 10px;
+  width: 100%;
 }
 form {
   width: 100%;
@@ -40,5 +40,17 @@ form {
   border: none;
   width: 350px;
   padding: 10px;
+}
+@media screen and (max-width: 650px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .input {
+    width: 80%;
+  }
 }
 </style>

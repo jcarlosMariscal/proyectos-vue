@@ -62,4 +62,37 @@ form input {
   box-sizing: border-box;
   font-size: 18px;
 }
+@media screen and (max-width: 650px) {
+  form {
+    width: 100%;
+  }
+  .form-container {
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-container div {
+    /* display: flex; */
+    width: 45%;
+  }
+}
+@media screen and (max-width: 460px) {
+  form {
+    width: 100%;
+  }
+  .form-container {
+    /* display: flex; */
+    flex-direction: column;
+  }
+  .form-container div {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+  }
+  .form-container div label {
+    width: 25%;
+  }
+}
 </style>

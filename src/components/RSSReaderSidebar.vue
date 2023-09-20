@@ -22,6 +22,12 @@ const handleClick = (source) => {
   grid-column-end: 2;
   /* background-color: #1e4b68; */
 }
+@media screen and (max-width: 650px) {
+  .sidebar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
 .sidebar a {
   color: white;
   display: block;

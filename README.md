@@ -1,24 +1,5 @@
-# proyectos-mrr
+# Proyectos Vue realizados a partir del curso de [Vida mrr](https://www.youtube.com/@vidamrr)
 
-## Project setup
-```
-npm install
-```
+## Se añadieron algunas funcionalidades extras y se personalizó el diseño de los proyectos.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Puede ver estos proyectos en [proyectos vue](https://proyectos-vue.vercel.app/)

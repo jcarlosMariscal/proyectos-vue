@@ -86,4 +86,16 @@ const collapsed = ref(true);
   padding: 0;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .collapsed {
+    height: 50px;
+    width: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .expanded {
+    width: 100%;
+  }
+}
 </style>
